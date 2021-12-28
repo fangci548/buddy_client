@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { UserService } from '../service/user.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
+import { NavController } from '@ionic/angular';
+import { TabsPage } from '../tabs/tabs.page';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.page.html',
@@ -24,7 +26,8 @@ export class SigninPage implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    public afuth: AngularFireAuth
+    public afuth: AngularFireAuth,
+    private navCtrl: NavController
   ) { }
 
 
@@ -52,7 +55,8 @@ export class SigninPage implements OnInit {
       this.nothing = true;
       this.emailvaild = true;
       this.exist = true;
-      this.router.navigate([''])
+      this.navCtrl.navigateForward('TabsPage');
+      this.router.navigate(['./'])
     } catch(err){
       console.dir(err)
       if (err.code === "auth/user-not-found"){
@@ -74,9 +78,8 @@ export class SigninPage implements OnInit {
     try{
       const res = await this.afuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       if(res){
-        this.router.navigate([''])
+        this.router.navigate(['tab'])
       }
-
     } catch(err){
       console.log(err)
     }

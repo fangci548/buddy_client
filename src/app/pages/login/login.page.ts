@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { ChatService } from '../../service/chat.service';
- 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,7 +11,7 @@ import { ChatService } from '../../service/chat.service';
 })
 export class LoginPage implements OnInit {
   credentialForm: FormGroup;
- 
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -19,14 +19,14 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private chatService: ChatService
   ) {}
- 
+
   ngOnInit() {
     this.credentialForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
- 
+
   async signUp() {
     const loading = await this.loadingController.create();
     await loading.present();
@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
       .then(
         (user) => {
           loading.dismiss();
-          this.router.navigateByUrl('/chat', { replaceUrl: true });
+          this.router.navigateByUrl('/tab1', { replaceUrl: true });
         },
         async (err) => {
           loading.dismiss();
@@ -44,22 +44,22 @@ export class LoginPage implements OnInit {
             message: err.message,
             buttons: ['OK'],
           });
- 
+
           await alert.present();
         }
       );
   }
- 
+
   async signIn() {
     const loading = await this.loadingController.create();
     await loading.present();
- 
+
     this.chatService
       .signIn(this.credentialForm.value)
       .then(
         (res) => {
           loading.dismiss();
-          this.router.navigateByUrl('/chat', { replaceUrl: true });
+          this.router.navigateByUrl('/tab', { replaceUrl: true });
         },
         async (err) => {
           loading.dismiss();
@@ -68,17 +68,17 @@ export class LoginPage implements OnInit {
             message: err.message,
             buttons: ['OK'],
           });
- 
+
           await alert.present();
         }
       );
   }
- 
+
   // Easy access for form fields
   get email() {
     return this.credentialForm.get('email');
   }
-  
+
   get password() {
     return this.credentialForm.get('password');
   }

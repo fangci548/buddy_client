@@ -5,7 +5,7 @@ import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angula
 // Send unauthorized users to login
 const redirectUnauthorizedToLogin = () =>
   redirectUnauthorizedTo(['/']);
- 
+
 // Automatically log in users
 const redirectLoggedInToChat = () => redirectLoggedInTo(['/chat']);
 const routes: Routes = [

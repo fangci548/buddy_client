@@ -1,3 +1,4 @@
+import { TabsPage } from './../../tabs/tabs.page';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,6 +8,10 @@ const routes: Routes = [
   {
     path: '',
     component: LoginPage
+  },
+  {
+    path: 'tab',
+    component: TabsPage
   }
 ];
 
