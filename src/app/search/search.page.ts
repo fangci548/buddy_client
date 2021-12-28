@@ -6,6 +6,10 @@ import { Case } from '../models/case.model';
 import { Moment } from 'moment';
 import { SearchCase } from '../models/searchcase.model';
 import * as moment from 'moment';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 // import { FirebaseDatabase, FirebaseFirestore } from 'angularfire2';
 
 
@@ -23,14 +27,20 @@ export class SearchPage implements OnInit {
   searchTerm: string;
   cases: SearchCase[] = [];
   collect: boolean = false;
+  currentuser = null;
   date: Date = new Date('2021-09-10 00:15:37');
 
 
   constructor(
     private caseService: CaseService,
     private navCtrl: NavController,
+    public afuth: AngularFireAuth
     //private store: FirebaseFirestore
-  ) { }
+  ) {
+    this.afuth.onAuthStateChanged((user) => {
+      this.currentuser = user;
+    });
+  }
 
   ngOnInit() {
     this.cases = this.caseService.getCases();
@@ -38,6 +48,16 @@ export class SearchPage implements OnInit {
 
   showDetail(selectedCase: SearchCase){
     this.navCtrl.navigateForward('search/detail/'+selectedCase.id)
+    console.log(this.currentuser);
+
+    // onAuthStateChanged(getAuth(), (user) => {
+    //   if(user){
+    //     const uid = user.uid;
+    //     console.log(user.uid);
+    //   }
+
+    // })
+
   }
   // ionViewDidEnter(){
   //   setTimeout(() => {

@@ -32,21 +32,15 @@
     請輸入帳號及密碼
   </ion-item>
 
-  <div class="ion-margin-vertical">
+  <div class="ion-margin-vertical" >
     <ion-button (click)="login()" style="width: 100%; --border-radius: 20px; font-weight: 900; font-size: 18px;">Sign In</ion-button>
-    <div style="height: 20px; margin: 10px; margin-bottom: 20px;" >
+    <div style="height: 35px; margin: 10px; margin-bottom: 5px;" >
       <ion-button style="left: 20%; position: absolute;" [routerLink]="['register']">註冊</ion-button>
       <ion-button style="right: 20%; position: absolute;">忘記密碼</ion-button>
     </div>
   </div>
 
-  <ion-card style="border: solid; border-color: #CCCCBF; border-radius: 20px; margin: 0px; width: 100%;">
-    <ion-item  class="otherlogin">
-      <ion-label>
-        <ion-icon name="logo-whatsapp"></ion-icon>
-        LINE 登入
-      </ion-label>
-    </ion-item>
+  <ion-card style="border: solid; border-color: #CCCCBF; border-radius: 20px; margin: 0px; width: 100%; margin-top: 3%;">
 
     <ion-item (click)="googlelogin()" class="otherlogin">
       <ion-label>
@@ -55,12 +49,6 @@
       </ion-label>
     </ion-item>
 
-    <ion-item (click)="login()" class="otherlogin" style="--border-style: none;">
-      <ion-label>
-        <ion-icon name="logo-facebook"></ion-icon>
-        Facebook 登入
-      </ion-label>
-    </ion-item>
 
   </ion-card>
 

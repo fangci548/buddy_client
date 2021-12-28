@@ -1,3 +1,4 @@
+import { User } from './../models/user.model';
 declare let window: any;
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,6 +19,7 @@ export class SigninPage implements OnInit {
   nothing = true;
   emailvaild = true;
   exist = true;
+  user = null;
 
   constructor(
     private userService: UserService,
@@ -71,7 +73,10 @@ export class SigninPage implements OnInit {
   async googlelogin() {
     try{
       const res = await this.afuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-      this.router.navigate([''])
+      if(res){
+        this.router.navigate([''])
+      }
+
     } catch(err){
       console.log(err)
     }
@@ -79,12 +84,4 @@ export class SigninPage implements OnInit {
   }
 
 
-  metamask() {
-    if (window.web3) {
-      // 有安裝 MetaMask
-      alert('Yes');
-    } else {
-      alert('沒有安裝 MetaMask');
-    }
-  };
 }
