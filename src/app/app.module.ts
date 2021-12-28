@@ -11,6 +11,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/compat/database';
 import { firebaseConfig } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +23,7 @@ import { firebaseConfig } from 'src/environments/environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [
     AngularFireDatabase,
