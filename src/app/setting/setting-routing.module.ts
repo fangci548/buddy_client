@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'coin-manage',
-    loadChildren: () => import('./coin-manage/coin-manage.module').then( m => m.CoinManagePageModule)
+    loadChildren: () => import('../map/map/map.module').then( m => m.MapPageModule)
   },
   {
     path: 'personal-manage',

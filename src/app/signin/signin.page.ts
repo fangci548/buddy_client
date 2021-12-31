@@ -78,7 +78,7 @@ export class SigninPage implements OnInit {
     try{
       const res = await this.afuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
       if(res){
-        this.router.navigate(['tab'])
+        this.router.navigate(['./'])
       }
     } catch(err){
       console.log(err)

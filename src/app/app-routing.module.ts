@@ -7,21 +7,26 @@ const redirectUnauthorizedToLogin = () =>
   redirectUnauthorizedTo(['/']);
 
 // Automatically log in users
-const redirectLoggedInToChat = () => redirectLoggedInTo(['/chat']);
+//const redirectLoggedInToChat = () => redirectLoggedInTo(['/chat']);
 const routes: Routes = [
   // {
   //   path: '',
   //   loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
   //   ...canActivate(redirectLoggedInToChat),
   // },
-  {
-    path: 'chat',
-    ...canActivate(redirectUnauthorizedToLogin),
-    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
-  },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+  // },
+  // {
+  //   path: 'chat',
+  //   ...canActivate(redirectUnauthorizedToLogin),
+  //   loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  // },
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+    //...canActivate(redirectLoggedInToChat),
   },
   {
     path: 'search',
@@ -70,6 +75,10 @@ const routes: Routes = [
   {
     path: 'message',
     loadChildren: () => import('./message/message.module').then( m => m.MessagePageModule)
+  },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map/map.module').then(m => m.MapPageModule)
   },
 
 

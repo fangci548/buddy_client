@@ -24,11 +24,11 @@ export const environment = {
   appId: "1:507350814417:web:e00e10fabb60cb21f83ff0"
 };*/
 export const firebaseConfig = {
-  apiKey: "AIzaSyAVldrsvtbJo3i2iD2Yp4zzRs15VG_nyso",
-  authDomain: "project-24675.firebaseapp.com",
-  databaseURL: "https://project-24675-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "project-24675",
-  storageBucket: "project-24675.appspot.com",
-  messagingSenderId: "412365517044",
-  appId: "1:412365517044:web:af281e311458bcdcd06ea1"
-};
+    apiKey: "AIzaSyCYWEb2X7HTM0HZMeaPBwRPQpIbBPHgeKo",
+    authDomain: "buddy-549bf.firebaseapp.com",
+    databaseURL: "https://buddy-549bf-default-rtdb.firebaseio.com",
+    projectId: "buddy-549bf",
+    storageBucket: "buddy-549bf.appspot.com",
+    messagingSenderId: "507350814417",
+    appId: "1:507350814417:web:e00e10fabb60cb21f83ff0"
+  };

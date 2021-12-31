@@ -75,3 +75,11 @@ setting頁面:
 popover 下拉式選項
 
 評價  區塊鏈裡面放評價 交易紀錄等等
+
+
+12/31
+打包方法
+https://kanon75505601.gitbooks.io/ionic2-3-install/content/ionickai-767c-da-bao-cheng-apk-dang-an.html
+
+出問題的解決方法
+https://blog.csdn.net/sunwe/article/details/106295073

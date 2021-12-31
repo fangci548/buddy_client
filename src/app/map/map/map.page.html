@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-toolbar>
+      <!-- <ion-title>message</ion-title> -->
+      <a (click)="goback()" style="color: #606c70">
+        <ion-icon name="return-down-back-outline" style="width: 30px; height: 30px;"></ion-icon>
+        BACK
+      </a>
+
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="height: 550px;">
+  <div #map id="map"></div>
+</ion-content>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOGabozHvCiDvgIS9adgL7FgYPiqn6Lfw&callback=initMap">
+</script>
