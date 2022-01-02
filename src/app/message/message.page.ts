@@ -34,11 +34,7 @@ export class MessagePage implements OnInit {
 
   async openModal(){
 
-    const modal = await this.modalCtrl.create({
-      component: MessageModalComponent,
-      componentProps: {title: this.case.userName, content: this.case.content, id: this.case.id, hashtag: this.case.hashtag, pay: this.case.pay}
-    });
 
-    await modal.present();
+     this.nav.navigateBack('/chat');
   }
 }

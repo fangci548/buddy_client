@@ -18,11 +18,11 @@ const routes: Routes = [
   //   path: '',
   //   loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
   // },
-  // {
-  //   path: 'chat',
-  //   ...canActivate(redirectUnauthorizedToLogin),
-  //   loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
-  // },
+  {
+    path: 'chat',
+    ...canActivate(redirectUnauthorizedToLogin),
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
