@@ -20,8 +20,8 @@
 
   <ion-row *ngFor="let message of messages | async">
     <ion-col size="9" class="message"
-             [offset]="message.myMsg ? 3 : 0"
-             [ngClass]="{ 'my-message': message.myMsg, 'other-message': !message.myMsg }">
+            [offset]="message.myMsg ? 3 : 0"
+            [ngClass]="{ 'my-message': message.myMsg, 'other-message': !message.myMsg }">
       <b>{{ message.fromName }}</b><br>
       <span>{{ message.msg }}
         </span>

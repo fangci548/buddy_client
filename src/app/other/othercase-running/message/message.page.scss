@@ -133,3 +133,20 @@ ion-card-content {
   position: absolute;
   bottom: 2%;
 }
+
+.my-message {
+  background-color: #fad2e1;
+  color: #333;
+
+  // background: var(--ion-color-tertiary);
+  // color: #fff;
+  // font-weight: 300;
+  box-shadow: 0 0 10px #888;
+}
+
+.other-message {
+  color: #000;
+  background-color: #f4acb7;
+  font-weight: 300;
+  box-shadow: 0 0 10px #888;
+}

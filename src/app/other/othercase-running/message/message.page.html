@@ -43,8 +43,18 @@
     </div>
 
   </ion-card>
-
   <div class="dialogue" style="margin-top: 10px;">
+    <ion-row *ngFor="let message of messages | async">
+      <ion-col size="9" class="message" [offset]="message.myMsg ? 3 : 0"
+        [ngClass]="{ 'my-message': message.myMsg, 'other-message': !message.myMsg }">
+        <b>{{ message.fromName }}</b><br>
+        <span>{{ message.msg }}
+        </span>
+        <div class="time ion-text-right"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!-- <div class="dialogue" style="margin-top: 10px;">
     <div class="user remote">
       <div class="avatar">
         <div class="pic">
@@ -85,11 +95,28 @@
       </div>
       <div class="text">我有使用過基礎C語言，能夠寫出簡單的程式</div>
     </div>
-  </div>
+  </div> -->
 
+  <ion-footer>
+    <ion-toolbar color=#606c70>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="11">
+          <ion-textarea placeholder="輸入文字" autoGrow="true" class="message-input" rows="1" maxLength="500"
+            [(ngModel)]="newMsg">
+          </ion-textarea>
+        </ion-col>
+        <ion-col size="1">
+          <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''" class="msg-btn"
+            (click)="sendMessage()">
+            <ion-icon name="send" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>
 
-  <ion-item class="input">
+  <!-- <ion-item class="input">
     <ion-input placeholder="輸入文字" ></ion-input>
     <ion-icon name="paper-plane-outline"></ion-icon>
-  </ion-item>
+  </ion-item> -->
 </ion-content>

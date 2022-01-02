@@ -35,6 +35,6 @@ export class MessagePage implements OnInit {
   async openModal(){
 
 
-     this.nav.navigateBack('/chat');
+    this.nav.navigateBack('/chat');
   }
 }
