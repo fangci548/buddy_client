@@ -123,6 +123,11 @@ ion-card-content {
     font-weight: 300;
     box-shadow: 0 0 10px #888;
   }
+  .time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+  }
 }
 
 .input{
@@ -134,19 +139,34 @@ ion-card-content {
   bottom: 2%;
 }
 
-.my-message {
-  background-color: #fad2e1;
-  color: #333;
-
-  // background: var(--ion-color-tertiary);
-  // color: #fff;
-  // font-weight: 300;
-  box-shadow: 0 0 10px #888;
+.message {
+  padding: 10px !important;
+  border-radius: 10px !important;
+  margin-bottom: 4px !important;
+  //white-space: pre-wrap;
 }
 
-.other-message {
-  color: #000;
-  background-color: #f4acb7;
-  font-weight: 300;
-  box-shadow: 0 0 10px #888;
-}
+// .my-message {
+//   background-color: #fad2e1;
+//   color: #333;
+//
+//   // background: var(--ion-color-tertiary);
+//   // color: #fff;
+//   // font-weight: 300;
+//   box-shadow: 0 0 10px #888;
+//  .fromName{
+//  color: #000;
+//
+//  }
+// }
+//
+// .other-message {
+//   color: #000;
+//   background-color: #f4acb7;
+//   font-weight: 300;
+//   box-shadow: 0 0 10px #888;
+//
+// }
+
+
+
