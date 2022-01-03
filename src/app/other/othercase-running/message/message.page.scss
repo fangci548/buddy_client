@@ -13,6 +13,18 @@ ion-card {
   }
 }
 
+.navFixed {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  min-width: 100%;
+  opacity: 0.94;
+  transition: opacity .5s ease-out;
+}
+
+
 .hashtag {
   margin-left: 20%;
   color: #606c70;
@@ -130,7 +142,7 @@ ion-card-content {
   }
 }
 
-.input{
+.input {
   border: solid;
   width: 98%;
   border-radius: 20px;
