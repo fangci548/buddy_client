@@ -22,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'account-manage',
-    loadChildren: () => import('./account-manage/account-manage.module').then( m => m.AccountManagePageModule)
+//     loadChildren: () => import('./account-manage/account-manage.module').then( m => m.AccountManagePageModule)
+      loadChildren: () => import('../photopage/tab1.module').then(m => m.Tab1PageModule)
   },
   {
     path: 'putmoneyin',

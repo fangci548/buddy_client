@@ -80,6 +80,10 @@ const routes: Routes = [
     path: 'map',
     loadChildren: () => import('./map/map/map.module').then(m => m.MapPageModule)
   },
+  {
+    path:'photo',
+     loadChildren: () => import('./photopage/tab1.module').then(m => m.Tab1PageModule)
+  }
 
 
 
